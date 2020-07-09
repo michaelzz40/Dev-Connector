@@ -18,7 +18,7 @@ router.get("/", async (req, res) => {
 });
 
 // @route    POST api/posts
-// @desc     Create new form
+// @desc     Create new posts
 // @access   Private
 router.post("/", auth, async (req, res) => {
   const { title, description } = req.body;
