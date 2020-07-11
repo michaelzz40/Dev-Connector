@@ -1,4 +1,4 @@
-import React, { useEffect, Fragment } from "react";
+import React, { Fragment } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
@@ -8,6 +8,9 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
   const authLinks = (
     <Fragment>
       <ul>
+        <li>
+          <Link to='/profiles'>Developers</Link>
+        </li>
         <li>
           <Link to='/dashboard'>
             <i className='fas fa-user'></i>{" "}
@@ -28,7 +31,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
     <Fragment>
       <ul>
         <li>
-          <Link to='profiles.html'>Developers</Link>
+          <Link to='/profiles'>Developers</Link>
         </li>
         <li>
           <Link to='/register'>Register</Link>
