@@ -10,7 +10,8 @@ import {
   CLEAR_PROFILE,
   GET_PROFILES,
   GET_REPOS,
-  REPOS_LOADING
+  REPOS_LOADING,
+  PROFILE_LOADING
 } from "./types";
 
 //Get current user's profile
@@ -34,6 +35,9 @@ export const getCurrentProfile = () => async dispatch => {
 export const getProfiles = () => async dispatch => {
   dispatch({ type: CLEAR_PROFILE });
   try {
+    dispatch({
+      type: PROFILE_LOADING
+    });
     const res = await axios.get("/api/profile");
 
     dispatch({
