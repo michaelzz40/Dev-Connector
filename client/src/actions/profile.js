@@ -9,7 +9,8 @@ import {
   ACCOUNT_DELETED,
   CLEAR_PROFILE,
   GET_PROFILES,
-  GET_REPOS
+  GET_REPOS,
+  REPOS_LOADING
 } from "./types";
 
 //Get current user's profile
@@ -67,6 +68,9 @@ export const getProfileById = userId => async dispatch => {
 //Get github repos
 export const getGithubRepos = username => async dispatch => {
   try {
+    dispatch({
+      type: REPOS_LOADING
+    });
     const res = await axios.get(`/api/profile/github/${username}`);
 
     dispatch({
